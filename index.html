@@ -4,30 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="https://source.unsplash.com/random/20X20" alt="">
-        <h1>サイトのタイトルです</h1>
+    <header id="HomeHeader">
+        <h1>きのこ図鑑</h1>
+        <h2>きのこ写真をまとめた備忘録</h2>
         <nav>
-            <ul>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#">ブログ</a></li>
-                <li><a href="#">アバウト</a></li>
+            <ul id="lists">
+                <li><a href="#">ベニテングダケ</a></li>
+                <li><a href="#">しいたけ</a></li>
+                <li><a href="#">マイタケ</a></li>
             </ul>
+                <button id="addBtn">さらに表示する</button>
         </nav>
     </header>
 <main>
     <article>
         <header>
             <h1>記事のタイトルです</h1>
-            <h2>記事のサブタイトルです</h2>
+            <h2 id="MainSubtitle">記事のサブタイトルです</h2>
             <time datetime="2020-02-01">1 Feb 2020</time>
         </header>
         <div>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus dolores velit obcaecati architecto corporis cum consectetur corrupti nam eveniet odio atque, culpa quas! Temporibus omnis cum iusto soluta labore.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus dolores velit obcaecati architecto corporis cum consectetur corrupti nam eveniet odio atque, culpa quas! Temporibus omnis cum iusto soluta labore.
         </p>
+        <script src="index.js"></script>
+
         </div>
     </article>
 
