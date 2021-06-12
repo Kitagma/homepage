@@ -3,9 +3,41 @@
   padding: 0px;
 }
 
-#HomeHeader{
+.HomeHeader{
+  top: 0;
+	width: 100%;
+	height: 10rem;
   color: white;
-  background-color:#5C8C2B;
+  background-color: #262523;
+}
+
+/* Header Picture */
+.HomeFigure {
+	position: absolute;
+  top: 0;
+	left: 0;
+  width: 100%;
+	height: 10rem;
+}
+
+.HomeFigure img {
+	width: 100%;
+	height: 10rem;
+  object-fit: cover;
+}
+
+/* Site Title */
+.HomeHeader h1 {
+	position: absolute;
+  text-align: center;
+  font-size: 3em;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.HomeHeader h2 {
+	position: absolute;
+  margin-top: 7rem;
 }
 
 #MainSubtitle{
@@ -13,11 +45,12 @@
 }
 
 h1{
-  text-align: center
+  text-align: center;
 }
 
 nav {
-  margin-top: 1rem;
+  position: absolute;
+  margin-top: 11rem;
   float: left;
   width: calc(100%*(1/5));
 	background-color:#262523;
@@ -48,6 +81,7 @@ main{
 }
 
 div{
+  min-height: calc(100% - 1rem);
   margin-left: 1rem;
 }
 
@@ -56,7 +90,9 @@ time{
 }
 
 footer{
-  margin-top: 12rem;
+  width: 100%;
+  height: 1rem;
+  margin-left: calc(100%*(1/2));
   clear: right;
 }
 
