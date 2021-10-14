@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .HomeHeader{
   top: 0;
 	width: 100%;
@@ -26,6 +30,75 @@
   object-fit: cover;
 }
 
+@media screen and (min-width: 480px) {
+#nav_active {
+  display: none;
+}
+}
+
+@media screen and (max-width: 479px) {
+  nav{
+    position: absolute;
+    top: 0;
+    /*ナビメニューを右に隠した状態になる*/
+    right : -100%;
+    /*０.7秒かけてナビメニューがスライドする*/
+    transition: .7s;
+  }
+  .hamburger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+  }
+  .hamburger {
+    position: relative;
+    width: 50px;
+    height: 44px;
+    margin-top: 100px;
+    margin-left: calc(100% - 70px); /*ハンバーガーメニューの右寄せ*/
+    background: none;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  .hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  .hamburger span:nth-of-type(1) {
+    top: 0;
+  }
+  .hamburger span:nth-of-type(2) {
+    top: 20px;
+  }
+  .hamburger span:nth-of-type(3) {
+    bottom: 0;
+  }
+
+  /*Javascroptでactiveクラスを追加*/
+  .hamburger.active span:nth-of-type(1) {
+    width: 45%;
+    transform: translate3d(2px, 10px, 0) rotate(45deg);
+  }
+  .hamburger.active span:nth-of-type(2) {
+    transform: translate3d(-1px, 0, 0) rotate(-45deg);
+  }
+  .hamburger.active span:nth-of-type(3) {
+    width: 45%;
+    transform: translate3d(23px, -9px, 0) rotate(45deg);
+  }
+
+  nav.active {
+    right: 0%;
+  }
+
+}
+
 /* Site Title */
 .HomeHeader h1 {
 	position: absolute;
@@ -40,44 +113,117 @@
   margin-top: 7rem;
 }
 
+#Maintitle{
+  text-align: left;
+  margin-left: 1rem;
+}
+
 #MainSubtitle{
   margin-left: 1rem;
+}
+
+@media screen and (min-width: 480px) {
+  #Mainimage img{ 
+  width: 50%;
+ }
+}
+
+@media screen and (max-width: 479px) {
+  #Mainimage img{ 
+    width: 100%;
+   }
 }
 
 h1{
   text-align: center;
 }
 
+@media screen and (min-width: 480px) {
 nav {
   position: absolute;
   margin-top: 11rem;
   float: left;
   width: calc(100%*(1/5));
-	background-color:#262523;
+	background-color:#192527;
 	color: white;
+  }
 }
-nav ul {
+
+@media screen and (max-width: 479px) {
+  nav {
+    position: absolute;
+    margin-top: 10rem;
+    float:right;
+    width: calc(100%*(3/5));
+    margin-left: calc(100%*(2/5));
+    background-color: #192527;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  nav ul {
 	display: flex;
 	flex-flow: column;
 	margin: 0;
 	padding: 6px;
 	list-style-type: none;
+  }
 }
-nav a {
+
+@media screen and (max-width: 479px) {
+  nav ul {
+	display: flex;
+	flex-flow: column;
+	margin: 0;
+	padding: 6px;
+	list-style-type: none;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  nav a {
+  margin-top: 1px;
 	display: block;
-	border-radius: 4px;
+  border: 1px solid;
+	border-radius: 2px;
 	padding: 12px 24px;
 	color: white;
 	text-decoration: none;
+  }
 }
+
+@media screen and (max-width: 479px) {
+  nav a {
+  margin-top: 1px;
+  display: block;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  }
+}
+
 nav li a:hover {
 	background-color: #8cae47;
 }
 
+@media screen and (min-width: 480px) {
 main{
   margin-top: 1rem;
   float: right;
   width: calc(100%*(4/5));
+}
+}
+
+@media screen and (max-width: 479px) {
+  main{
+    margin-top: 1rem;
+    margin-right: 1rem;
+    float: right;
+    width: calc(100%-1rem);
+  }
 }
 
 div{
@@ -90,14 +236,10 @@ time{
 }
 
 footer{
-  width: 100%;
-  height: 1rem;
+  height: 2rem;
+  padding-top: 1rem;
   margin-left: calc(100%*(1/2));
   clear: right;
-}
-
-p:hover {
-  background-color: pink;  
 }
 
 /*Display more lists*/
@@ -107,13 +249,14 @@ p:hover {
   border-radius: 5px;
   background: #4676D7;
   color: #fff;
-  padding: 8px 16px;
+  padding: 8px 26px;
   font-size: 16px;
 }
 
 #addBtn:hover {
   background: #1d49aa;
 }
+
 
 /*#addBtn:focus {
   outline: none;
